@@ -1375,9 +1375,9 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+h2.shadow-border{
+  text-shadow: 0 -2px 0 var(--highlight);
+} 
 
 /*--------------------------------------------------------------
 # Contact Section
