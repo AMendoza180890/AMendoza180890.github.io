@@ -1376,7 +1376,7 @@ section,
 # Starter Section Section
 --------------------------------------------------------------*/
 h2.shadow-border{
-  text-shadow: 0 -2px 0 var(--highlight);
+  text-shadow: #000000 1.5px 0 10px;
 } 
 
 /*--------------------------------------------------------------
