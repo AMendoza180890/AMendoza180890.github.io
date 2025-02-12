@@ -44,6 +44,16 @@
   --surface-color: #343434;
 }
 
+.btn-primary{
+  background-color: var(--accent-color);
+  color: var(--default-color);
+  border: var(--accent-color);
+}
+
+.btn-primary:hover{
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
 .dark-background {
   --background-color: rgba(15, 15, 15, 0.975);
   --default-color: #ffffff;
