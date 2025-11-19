@@ -1,112 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AMendoza|Portfolio</title>
+    <meta
+      name="description"
+      content="This portfolio showcases professional web development and IT solutions built using C#, PHP, JavaScript, Astro, Tailwind, MySQL, SQL Server, and CSS. Each project highlights modern design, clean architecture, and scalable functionality tailored to real-world needs. Explore a selection of high-quality digital solutions crafted with precision and industry-driven best practices.
+"
+    />
+    <meta
+      name="keywords"
+      content="developer, portfolio, freelancer, web development"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>AMendoza|Portfolio</title>
-  <meta name="description" content="This portfolio showcases professional web development and IT solutions built using C#, PHP, JavaScript, Astro, Tailwind, MySQL, SQL Server, and CSS. Each project highlights modern design, clean architecture, and scalable functionality tailored to real-world needs. Explore a selection of high-quality digital solutions crafted with precision and industry-driven best practices.
-">
-  <meta name="keywords" content="developer, portfolio, freelancer, web development">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.ico" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-</head>
+  <body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center"
+          title="empty"
+        >
+          <!-- <img src="assets/img/logo.png" alt="AMendoza Logo" title="logo of site AMendoza"/> -->
+        </a>
 
-<body class="index-page">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li>
+              <a href="index.html" class="active" title="Home page">Home</a>
+            </li>
+            <li><a href="resume.html" title="Resume page">Resume</a></li>
+            <li><a href="projects.html" title="Projects page">Projects</a></li>
+            <li>
+              <a
+                href="https://github.com/AMendoza180890"
+                title="GitHub portfolio"
+                >Portfolio</a
+              >
+            </li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center" title="empty">
-        <!-- <h1 class="sitename">Allan Mendoza|Portfolio</h1> -->
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active" title="Home page">Home</a></li>
-          <li><a href="resume.html" title="Resume page">Resume</a></li>
-          <li><a href="projects.html" title="Projects page">Projects</a></li>
-          <li><a href="https://github.com/AMendoza180890" title="GitHub portfolio">Portfolio</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/portfolio/51253123.jpg" alt="banner of main home page about code" class="opacity-10">
-
-      <div class="container" data-aos="zoom-out" data-aos-delay="100">
-        <h2 class="shadow-border">Allan Mendoza</h2>
-        <p>I'm a <span class="typed" data-typed-items="Developer, Freelancer"></span><span class="typed-cursor typed-cursor--blink"></span></p>
-        <div class="social-links">
-          <a href="https://github.com/AMendoza180890/" title="github-button"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/amendoza1890/" title="linkedin-button"><i class="bi bi-linkedin"></i></a>
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section dark-background ">
+        <img
+          src="assets/img/portfolio/51253123.jpg"
+          alt="banner of main home page about code"
+          class="opacity-10"
+        />
+        <div class="container">
+  
+          <div class="container" data-aos="zoom-out" data-aos-delay="100">
+            <h2 class="shadow-border">Allan Mendoza</h2>
+            <p>
+              I'm a
+              <span class="typed" data-typed-items="Developer, Freelancer"></span
+              ><span class="typed-cursor typed-cursor--blink"></span>
+            </p>
+            <div class="social-links">
+              <a href="https://github.com/AMendoza180890/" title="github-button"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/amendoza1890/"
+                title="linkedin-button"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section><!-- /Hero Section -->
 
-    </section><!-- /Hero Section -->
+      <section id="hero" class="hero section dark-background ">
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="resume-item">
+            <h2>About Me</h2>
+            <p>
+              <em
+                >I am a web developer with more than 10 years of experience,
+                specializing in creating efficient digital solutions tailored to
+                the needs of organizations. I have had the opportunity to work
+                with non-profit organizations, where I have contributed
+                meaningfully to their mission by developing effective
+                technological solutions. Throughout my career, I have built
+                websites, applications, and systems that enhance efficiency and
+                communication. I am currently focused on projects that create a
+                positive impact, and I remain actively involved in developing
+                and maintaining several GitHub repositories to continue learning
+                and growing professionally.</em
+              >
+            </p>
+          </div><!-- End About Me -->
+        </div>
+      </section>
+      <!-- /end Section About Me -->
 
-  </main>
+      <section id="hero" class="hero section dark-background">
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="resume-item">
+            <h2>Technical Skills</h2>
+            <p>
+              <ul class="list-group-dark list-group-flush text-start">
+                <li>Programming Languages: C#, PHP, JavaScript</li>
+                <li>Web Technologies: HTML5, CSS3, Bootstrap, Tailwind CSS</li>
+                <li>Frameworks: .NET, Laravel, React</li>
+                <li>Databases: MySQL, SQL Server, Mongo DB</li>
+                <li>Version Control: Git, GitHub</li>
+                <li>Other Tools: Visual Studio, VS Code, Postman</li>
+              </ul>
+            </p>
+          </div>
+          <!-- End stack -->
+        </div>
+      </section>
+      <!-- /end Stack Section -->
+    </main>
 
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3 class="sitename">About this site</h3>
-      <p>This space showcases the various projects and courses I have completed, highlighting my expertise and professional growth.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/AMendoza180890/" title="github-button"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/amendoza1890/" title="linkedin-button"><i class="bi bi-linkedin"></i></a>
-        <a href="tel:+1925628-5359" title="phone-button"><i class="bi bi-telephone"></i></a>
-        <a href="mailto:allanmaleman@gmail.com" title="email-button"><i class="bi bi-link"></i></a>
-      </div>
+    <footer id="footer" class="footer dark-background">
       <div class="container">
-        <div class="copyright">
-          <span></span><strong class="px-1 sitename">AMendoza</strong>| Portfolio <span></span>
+        <h3 class="sitename">Contact</h3>
+        <div class="social-links d-flex justify-content-center">
+          <a href="https://github.com/AMendoza180890/" title="linkedin-button"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/amendoza1890/"
+            title="linkedin-button"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <a href="tel:+1925628-5359"
+            ><i class="bi bi-telephone" title="phone-button"></i
+          ></a>
+          <a href="mailto:allanmaleman@gmail.com" title="email-button"
+            ><i class="bi bi-link"></i
+          ></a>
+        </div>
+        <div class="container">
+          <div class="copyright">
+            <span></span><strong class="px-1 sitename">AMendoza</strong>|
+            Portfolio <span></span>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" title="button-scroll"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      title="button-scroll"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+    <!-- Preloader -->
+    <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
