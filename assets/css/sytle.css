@@ -1,0 +1,3 @@
+.oscurecer-img {
+  filter: brightness(70%); /* 50% del brillo original, es decir, la imagen será más oscura */
+} 
