@@ -57,7 +57,6 @@
           class="logo d-flex align-items-center"
           title="empty"
         >
-          <!-- <img src="assets/img/logo.png" alt="AMendoza Logo" title="logo of site AMendoza"/> -->
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -87,18 +86,19 @@
           src="assets/img/portfolio/background.jpg"
           alt="banner of main home page about code"
           class="img-fluid opacity-50 img-h"
+          fetchpriority="high"
         />
         <div class="container ">
           <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center" >
-              <div class="container" data-aos="zoom-out" data-aos-delay="100">
+              <article class="container" data-aos="zoom-out" data-aos-delay="100">
                 <h2 class="shadow-border">Allan Mendoza</h2>
                 <p>
                   I'm a
                   <span class="typed fw-light" data-typed-items="Developer, Freelancer"></span
                   ><span class="typed-cursor typed-cursor--blink"></span>
                 </p>
-                <div class="social-links">
+                <nav class="social-links">
                   <a href="https://github.com/AMendoza180890/" title="github-button"
                     ><i class="bi bi-github"></i
                   ></a>
@@ -107,12 +107,11 @@
                     title="linkedin-button"
                     ><i class="bi bi-linkedin"></i
                   ></a>
-                </div>
-              </div>
+                </nav>
+              </article>
             </div>
 
-            <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="zoom-out" data-aos-delay="100">
-              <!-- <div class="container" > -->
+            <article class="col-lg-6 d-flex flex-column justify-content-center" data-aos="zoom-out" data-aos-delay="100">
                 <h2 class="resume-title shadow-border">Technical Skills</h2>
                 <div class="resume-item">
                     <ul class="list-group-dark list-group-flush text-start list-inline fw-light">
@@ -124,38 +123,36 @@
                       <li class="list-inline-item"><u>Other Tools:</u> Visual Studio, VS Code, Postman</li>
                     </ul>
                 </div>
-              <!-- </div> -->
-          </div>
+          </article>
 
-            <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="shadow-border">About Me</h2>
-            <div class="resume-item">
-              <p >
-                <em>I am a web developer with more than 10 years of experience,
-                  specializing in creating efficient digital solutions tailored to
-                  the needs of organizations. I have had the opportunity to work
-                  with non-profit organizations, where I have contributed
-                  meaningfully to their mission by developing effective
-                  technological solutions. Throughout my career, I have built
-                  websites, applications, and systems that enhance efficiency and
-                  communication. I am currently focused on projects that create a
-                  positive impact, and I remain actively involved in developing
-                  and maintaining several GitHub repositories to continue learning
-                  and growing professionally.</em
-                >
-              </p>
-            </div>
-          
-              </div><!-- End About Me -->
+            <article class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+              <h2 class="shadow-border">About Me</h2>
+                <div class="resume-item">
+                  <p >
+                    <em>I am a web developer with more than 10 years of experience,
+                      specializing in creating efficient digital solutions tailored to
+                      the needs of organizations. I have had the opportunity to work
+                      with non-profit organizations, where I have contributed
+                      meaningfully to their mission by developing effective
+                      technological solutions. Throughout my career, I have built
+                      websites, applications, and systems that enhance efficiency and
+                      communication. I am currently focused on projects that create a
+                      positive impact, and I remain actively involved in developing
+                      and maintaining several GitHub repositories to continue learning
+                      and growing professionally.</em
+                    >
+                  </p>
+                </div>
+              </article><!-- End About Me -->
             </div>
           </div>
       </section><!-- /Hero Section -->
     </main>
 
     <footer id="footer" class="footer dark-background">
-      <div class="container">
+      <section class="container">
         <h3 class="sitename">Contact</h3>
-        <div class="social-links d-flex justify-content-center">
+        <nav class="social-links d-flex justify-content-center">
           <a href="https://github.com/AMendoza180890/" title="linkedin-button"
             ><i class="bi bi-github"></i
           ></a>
@@ -170,14 +167,14 @@
           <a href="mailto:allanmaleman@gmail.com" title="email-button"
             ><i class="bi bi-link"></i
           ></a>
-        </div>
+        </nav>
         <div class="container">
           <div class="copyright">
-            <span></span><strong class="px-1 sitename">AMendoza</strong>|
-            Portfolio <span></span>
+            <span><strong class="px-1 sitename">AMendoza</strong>|
+            Portfolio </span>
           </div>
         </div>
-      </div>
+      </section>
     </footer>
 
     <!-- Scroll Top -->

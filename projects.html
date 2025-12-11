@@ -48,7 +48,7 @@
 
   <body class="portfolio-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
-      <div
+      <section
         class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
       >
         <a href="index.html" class="logo d-flex align-items-center">
@@ -70,27 +70,22 @@
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-      </div>
+      </section>
     </header>
 
     <main class="main">
-      <Section class="page-header d-flex align-items-center pb-lg-4">
-        <div class="container position-relative">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-12 text-center">
-              <h2 class="page-title">About this page</h2>
-            </div>
-            <div class="col-lg-12 text-center">
-              <p class="mb-4">A selection of projects showcasing my web development and IT solutions expertise.</p>
-            </div>
-          </div>
-        </div>
-      </Section>
 
-      <section id="resume" class="resume section pb-lg-4">
-        <div class="container">
+      <section class="container">
+        <header class="text-center mt-5 pt-5">
+          <h2 class="page-title">About Projects</h2>
+          <p class="mb-4">A selection of projects showcasing my web development and IT solutions expertise.</p>
+        </header>
+      </section>
+
+      <section id="resume" class="container  pt-0">
           <div class="row">
-            <div class="col-lg-6 text-center mt-5" data-aos="fade-up" data-aos-delay="200">
+
+            <article class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="200">
               <a href="http://">
                 <img src="./assets/img/portfolio/tesorosdeDiosWebsite.jpg" alt="Website Tesoros de Dios" class="img-fluid"/>
                 <h2 class="page-title">
@@ -107,8 +102,9 @@
                   </ul>
                 </p>
               </a>
-            </div>
-            <div class="col-lg-6 text-center mt-5" data-aos="fade-up" data-aos-delay="200">
+            </article>
+
+            <article class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="200">
               <a href="https://www.biblioteca.tesorosdedios.org/ingreso" title="Project Library for Tesoros de Dios">
                 <img src="./assets/img/portfolio/Bibliotecatesorosdedios.jpg" alt="Library Tesoros de Dios" class="img-fluid"/>
                 <h2 class="page-title">
@@ -125,28 +121,40 @@
                   </ul>
                 </p>
               </a>
-            </div>
+            </article>
+
           </div>
-        </div>
       </section>
     </main>
 
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3 class="sitename">Contact</h3>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/AMendoza180890/" title="linkedin-button"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/amendoza1890/" title="linkedin-button"><i class="bi bi-linkedin"></i></a>
-        <a href="tel:+1925628-5359"><i class="bi bi-telephone" title="phone-button"></i></a>
-        <a href="mailto:allanmaleman@gmail.com" title="email-button"><i class="bi bi-link"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span></span><strong class="px-1 sitename">AMendoza</strong>| Portfolio <span></span>
+ <footer id="footer" class="footer dark-background">
+      <section class="container">
+        <h3 class="sitename">Contact</h3>
+        <nav class="social-links d-flex justify-content-center">
+          <a href="https://github.com/AMendoza180890/" title="linkedin-button"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/amendoza1890/"
+            title="linkedin-button"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <a href="tel:+1925628-5359"
+            ><i class="bi bi-telephone" title="phone-button"></i
+          ></a>
+          <a href="mailto:allanmaleman@gmail.com" title="email-button"
+            ><i class="bi bi-link"></i
+          ></a>
+        </nav>
+        <div class="container">
+          <div class="copyright">
+            <span><strong class="px-1 sitename">AMendoza</strong>|
+            Portfolio </span>
+          </div>
         </div>
-      </div>
-    </div>
-  </footer>
+      </section>
+    </footer>
+
 
     <!-- Scroll Top -->
     <a
