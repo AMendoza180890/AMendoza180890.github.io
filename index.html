@@ -41,7 +41,6 @@
       href="assets/vendor/glightbox/css/glightbox.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css">
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
@@ -79,13 +78,14 @@
       </div>
     </header>
 
-    <main class="main dark-background h-main">
+    <main class="main dark-background">
       <!-- Hero Section -->
-      <section id="hero" class="hero section dark-background p-0 m-0">
+      <section id="hero" class="hero section dark-background">
         <img
           src="assets/img/portfolio/background.webp"
           alt="banner of main home page about code"
           class="img-fluid opacity-50 img-h"
+          loading="eager"
           fetchpriority="high"
         />
         <div class="container ">
@@ -149,7 +149,7 @@
       </section><!-- /Hero Section -->
     </main>
 
-    <footer id="footer" class="footer dark-background">
+    <footer id="footer" class="footer dark-background pt-5">
       <section class="container">
         <h3 class="sitename">Contact</h3>
         <nav class="social-links d-flex justify-content-center">

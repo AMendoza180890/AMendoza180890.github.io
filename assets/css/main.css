@@ -67,6 +67,10 @@
   scroll-behavior: smooth;
 }
 
+.img-h, .h-main {
+    height: 80vh;
+}
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
@@ -551,7 +555,7 @@ h6 {
 
 .page-title .heading {
   padding: 160px 0 80px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid rgba(var(--default-color-rgb), 0.1);
 }
 
 .page-title .heading h1 {
@@ -560,7 +564,7 @@ h6 {
 }
 
 .page-title nav {
-  background-color: color-mix(in srgb, var(--default-color), transparent 90%);
+  background-color: rgba(var(--default-color-rgb), 0.1);
   padding: 20px 0;
 }
 
