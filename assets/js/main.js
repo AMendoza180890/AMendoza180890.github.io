@@ -9,6 +9,14 @@
 (function() {
   "use strict";
 
+  function runWhenIdle(callback) {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(callback, { timeout: 2000 });
+    } else {
+      setTimeout(callback, 1);
+    }
+  }
+
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
@@ -65,9 +73,7 @@
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
+    preloader.remove();
   }
 
   /**
@@ -105,21 +111,39 @@
       mirror: false
     });
   }
-  window.addEventListener('load', aosInit);
+  window.addEventListener('load', () => {
+    if (!document.querySelector('[data-aos]')) return;
+    if (window.matchMedia('(max-width: 768px)').matches) return;
+
+    const script = document.createElement('script');
+    script.src = 'assets/vendor/aos/aos.js';
+    script.defer = true;
+    script.onload = () => runWhenIdle(aosInit);
+    document.body.appendChild(script);
+  });
 
   /**
-   * Init typed.js
+   * Init typed.js (loaded on demand)
    */
   const selectTyped = document.querySelector('.typed');
-  if (selectTyped && typeof Typed !== 'undefined') {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
+  if (selectTyped) {
+    runWhenIdle(() => {
+      const script = document.createElement('script');
+      script.src = 'assets/vendor/typed.js/typed.umd.js';
+      script.defer = true;
+      script.onload = () => {
+        if (typeof Typed === 'undefined') return;
+        let typed_strings = selectTyped.getAttribute('data-typed-items');
+        typed_strings = typed_strings.split(',');
+        new Typed('.typed', {
+          strings: typed_strings,
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000
+        });
+      };
+      document.body.appendChild(script);
     });
   }
 

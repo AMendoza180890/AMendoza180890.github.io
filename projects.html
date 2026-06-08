@@ -27,27 +27,53 @@
     <link href="assets/img/favicon.ico" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Fonts -->
+    <!-- Fonts (async, minimal weights) -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@400;500;600&family=Raleway:wght@700&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@400;500;600&family=Raleway:wght@700&display=swap"
+      />
+    </noscript>
 
     <!-- Vendor CSS Files -->
     <link
       href="assets/vendor/bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <link
+      rel="preload"
+      href="assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-
-    <!-- Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet" />
+    <noscript>
+      <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    </noscript>
+    <link
+      href="assets/vendor/aos/aos.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    </noscript>
   </head>
 
   <body class="portfolio-page">
@@ -87,7 +113,10 @@
 
             <article class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="200">
               <a href="https://tesorosdedios.org/" title="Tesoros de Dios Website" rel="noopener noreferrer">
-                <img src="./assets/img/portfolio/tesorosdeDiosWebsite.jpg" alt="Website Tesoros de Dios" class="img-fluid"/>
+                <picture>
+                  <source srcset="./assets/img/portfolio/tesorosdeDiosWebsite.webp" type="image/webp" />
+                  <img src="./assets/img/portfolio/tesorosdeDiosWebsite.jpg" alt="Website Tesoros de Dios" class="img-fluid" width="800" height="600" loading="lazy" decoding="async" />
+                </picture>
                 <h2 class="page-title">
                   Tesoros de Dios Website
                 </h2>
@@ -106,7 +135,10 @@
 
             <article class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="200">
               <a href="https://www.biblioteca.tesorosdedios.org/ingreso" title="Project Library for Tesoros de Dios" rel="noopener noreferrer">
-                <img src="./assets/img/portfolio/Bibliotecatesorosdedios.jpg" alt="Library Tesoros de Dios" class="img-fluid"/>
+                <picture>
+                  <source srcset="./assets/img/portfolio/Bibliotecatesorosdedios.webp" type="image/webp" />
+                  <img src="./assets/img/portfolio/Bibliotecatesorosdedios.jpg" alt="Library Tesoros de Dios" class="img-fluid" width="800" height="600" loading="lazy" decoding="async" />
+                </picture>
                 <h2 class="page-title">
                   Tesoros de Dios Library (Biblioteca)
                 </h2>
@@ -165,12 +197,6 @@
       title="button-scroll"
       ><i class="bi bi-arrow-up-short"></i
     ></a>
-
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js" defer></script>
 
     <!-- Main JS File -->
     <script src="assets/js/main.js" defer></script>

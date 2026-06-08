@@ -71,6 +71,16 @@
     height: 80vh;
 }
 
+/* Keep above-the-fold content visible on mobile while AOS JS loads */
+@media (max-width: 768px) {
+  html:not(.no-js) [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition: none !important;
+  }
+}
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
