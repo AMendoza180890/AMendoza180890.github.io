@@ -9,6 +9,12 @@
 ">
   <meta name="keywords" content="developer, portfolio, freelancer, web development">
 
+  <!-- Security -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -22,8 +28,6 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -46,7 +50,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="resume.html" class="active">Resume</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="https://github.com/AMendoza180890">Portfolio</a></li>
+          <li><a href="https://github.com/AMendoza180890" rel="noopener noreferrer">Portfolio</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -54,7 +58,7 @@
     </div>
   </header>
 
-<main id="resume"class="main resume section pb-lg-4">
+<main id="resume" class="main resume section pb-lg-4">
   <section class="container pt-0 pb-0">
     <div class="row">
       <article class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -89,7 +93,7 @@
   </header>
       <article class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
         <div class="resume-item">
-          <h4><a href="https://tesorosdedios.org/" alt="God's Treasures" title="A non-profit organization that believes in partnering with families, schools, churches, and communities to promote the holistic development of children with disabilities in Nicaragua."> God's Treasures </a> | Head of Technology</h4>
+          <h4><a href="https://tesorosdedios.org/" title="God's Treasures"> God's Treasures </a> | Head of Technology</h4>
           <h5>2015 - 2024</h5>
           <p><em>Managua, Nicaragua</em></p>
           <ul>
@@ -105,7 +109,7 @@
 
         <article class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
         <div class="resume-item">
-          <h4><a href="https://webxni.com/" alt="webNica" title="An organization dedicated to marketing and social media to promote companies in the online market.">WebNica</a> | Web Developer</h4>
+          <h4><a href="https://webxni.com/" title="webNica">WebNica</a> | Web Developer</h4>
           <h5>2018 - 2023</h5>
           <p><em>Managua, Nicaragua</em></p>
           <ul>
@@ -119,7 +123,7 @@
 
        <article class="col-lg-6" data-aos="fade-up" data-aos-delay="200"> 
         <div class="resume-item">
-          <h4><a href="https://www.compassion.com/" alt="Salt and Light" title="Salt and Light ministry worked in asociation with Compassion International.">Salt and Light</a> | Tech Support</h4>
+          <h4><a href="https://www.compassion.com/" title="Salt and Light">Salt and Light</a> | Tech Support</h4>
           <h5>2012 - 2014</h5>
           <p><em>Managua, Nicaragua</em></p>
           <ul>
@@ -147,19 +151,20 @@
       <section class="container">
         <h3 class="sitename">Contact</h3>
         <nav class="social-links d-flex justify-content-center">
-          <a href="https://github.com/AMendoza180890/" title="linkedin-button"
+          <a href="https://github.com/AMendoza180890/" title="github-button" rel="noopener noreferrer"
             ><i class="bi bi-github"></i
           ></a>
           <a
             href="https://www.linkedin.com/in/amendoza1890/"
             title="linkedin-button"
+            rel="noopener noreferrer"
             ><i class="bi bi-linkedin"></i
           ></a>
           <a href="tel:+1925628-5359"
             ><i class="bi bi-telephone" title="phone-button"></i
           ></a>
           <a href="mailto:allanmaleman@gmail.com" title="email-button"
-            ><i class="bi bi-link"></i
+            ><i class="bi bi-envelope"></i
           ></a>
         </nav>
         <div class="container">
@@ -177,16 +182,10 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
 </body>
 

@@ -14,6 +14,15 @@
       content="developer, portfolio, freelancer, web development"
     />
 
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    />
+
     <!-- Favicons -->
     <link href="assets/img/favicon.ico" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -36,11 +45,6 @@
       rel="stylesheet"
     />
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
@@ -69,6 +73,7 @@
               <a
                 href="https://github.com/AMendoza180890"
                 title="GitHub portfolio"
+                rel="noopener noreferrer"
                 >Portfolio</a
               >
             </li>
@@ -99,12 +104,13 @@
                   ><span class="typed-cursor typed-cursor--blink"></span>
                 </p>
                 <nav class="social-links">
-                  <a href="https://github.com/AMendoza180890/" title="github-button"
+                  <a href="https://github.com/AMendoza180890/" title="github-button" rel="noopener noreferrer"
                     ><i class="bi bi-github"></i
                   ></a>
                   <a
                     href="https://www.linkedin.com/in/amendoza1890/"
                     title="linkedin-button"
+                    rel="noopener noreferrer"
                     ><i class="bi bi-linkedin"></i
                   ></a>
                 </nav>
@@ -117,7 +123,7 @@
                     <ul class="list-group-dark list-group-flush text-start list-inline fw-light">
                       <li class="list-inline-item"><u>Programming Languages:</u> C#, PHP, JavaScript</li>
                       <li class="list-inline-item"><u>Web Technologies:</u> HTML5, CSS3, Bootstrap, Tailwind CSS</li>
-                      <li class="list-inline-item"><u></u>Frameworks:</u> .NET, Laravel, React</li>
+                      <li class="list-inline-item"><u>Frameworks:</u> .NET, Laravel, React</li>
                       <li class="list-inline-item"><u>Databases:</u> MySQL, SQL Server, Mongo DB</li>
                       <li class="list-inline-item"><u>Version Control:</u> Git, GitHub</li>
                       <li class="list-inline-item"><u>Other Tools:</u> Visual Studio, VS Code, Postman</li>
@@ -153,19 +159,20 @@
       <section class="container">
         <h3 class="sitename">Contact</h3>
         <nav class="social-links d-flex justify-content-center">
-          <a href="https://github.com/AMendoza180890/" title="linkedin-button"
+          <a href="https://github.com/AMendoza180890/" title="github-button" rel="noopener noreferrer"
             ><i class="bi bi-github"></i
           ></a>
           <a
             href="https://www.linkedin.com/in/amendoza1890/"
             title="linkedin-button"
+            rel="noopener noreferrer"
             ><i class="bi bi-linkedin"></i
           ></a>
           <a href="tel:+1925628-5359"
             ><i class="bi bi-telephone" title="phone-button"></i
           ></a>
           <a href="mailto:allanmaleman@gmail.com" title="email-button"
-            ><i class="bi bi-link"></i
+            ><i class="bi bi-envelope"></i
           ></a>
         </nav>
         <div class="container">
@@ -190,15 +197,10 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/aos/aos.js" defer></script>
+    <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
 
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

@@ -14,6 +14,15 @@
       content="developer, portfolio, freelancer, web development"
     />
 
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    />
+
     <!-- Favicons -->
     <link href="assets/img/favicon.ico" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -36,11 +45,6 @@
       rel="stylesheet"
     />
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
@@ -53,7 +57,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Resume</h1>
+        <h1 class="sitename">Projects</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -61,7 +65,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="projects.html" class="active">Projects</a></li>
-          <li><a href="https://github.com/AMendoza180890">Portfolio</a></li>
+          <li><a href="https://github.com/AMendoza180890" rel="noopener noreferrer">Portfolio</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -82,13 +86,13 @@
           <div class="row">
 
             <article class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="200">
-              <a href="http://">
+              <a href="https://tesorosdedios.org/" title="Tesoros de Dios Website" rel="noopener noreferrer">
                 <img src="./assets/img/portfolio/tesorosdeDiosWebsite.jpg" alt="Website Tesoros de Dios" class="img-fluid"/>
                 <h2 class="page-title">
                   Tesoros de Dios Website
                 </h2>
-                <p class="mb-4 text-white">
-                  Developed a website for Tesoros de Dios, a non-profit organization dedicated to providing educational resources and support to underprivileged children in Latin America. The website features information about the organization's mission, programs, and ways to get involved. For this project, I used the next stack of Technology:
+                <div class="mb-4 text-white">
+                  <p>Developed a website for Tesoros de Dios, a non-profit organization dedicated to providing educational resources and support to underprivileged children in Latin America. The website features information about the organization's mission, programs, and ways to get involved. For this project, I used the next stack of Technology:</p>
                   <ul class="list-group-dark list-group-flush text-start list-inline text-white justify-content-center">
                     <li class="list-inline-item">WordPress</li>
                     <li class="list-inline-item">PHP</li>
@@ -96,18 +100,18 @@
                     <li class="list-inline-item">CSS</li>
                     <li class="list-inline-item">JavaScript.</li>
                   </ul>
-                </p>
+                </div>
               </a>
             </article>
 
             <article class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="200">
-              <a href="https://www.biblioteca.tesorosdedios.org/ingreso" title="Project Library for Tesoros de Dios">
+              <a href="https://www.biblioteca.tesorosdedios.org/ingreso" title="Project Library for Tesoros de Dios" rel="noopener noreferrer">
                 <img src="./assets/img/portfolio/Bibliotecatesorosdedios.jpg" alt="Library Tesoros de Dios" class="img-fluid"/>
                 <h2 class="page-title">
                   Tesoros de Dios Library (Biblioteca)
                 </h2>
-                <p class="mb-4 text-white">
-                  Created a database for Tesoros de Dios, allowing users to search resources, information and treatments for those with disabilities. This was designed as a library of information to share with churches, schools and other organizations to help them better serve individuals with special needs. For this project, I used the next stack of Technology:
+                <div class="mb-4 text-white">
+                  <p>Created a database for Tesoros de Dios, allowing users to search resources, information and treatments for those with disabilities. This was designed as a library of information to share with churches, schools and other organizations to help them better serve individuals with special needs. For this project, I used the next stack of Technology:</p>
                    <ul class="list-group-dark list-group-flush text-start text-white list-inline justify-content-center">
                     <li class="list-inline-item">PHP</li>
                     <li class="list-inline-item">MySQL</li>
@@ -115,7 +119,7 @@
                     <li class="list-inline-item">Bootstrap</li>
                     <li class="list-inline-item">JavaScript.</li>
                   </ul>
-                </p>
+                </div>
               </a>
             </article>
 
@@ -127,19 +131,20 @@
       <section class="container">
         <h3 class="sitename">Contact</h3>
         <nav class="social-links d-flex justify-content-center">
-          <a href="https://github.com/AMendoza180890/" title="linkedin-button"
+          <a href="https://github.com/AMendoza180890/" title="github-button" rel="noopener noreferrer"
             ><i class="bi bi-github"></i
           ></a>
           <a
             href="https://www.linkedin.com/in/amendoza1890/"
             title="linkedin-button"
+            rel="noopener noreferrer"
             ><i class="bi bi-linkedin"></i
           ></a>
           <a href="tel:+1925628-5359"
             ><i class="bi bi-telephone" title="phone-button"></i
           ></a>
           <a href="mailto:allanmaleman@gmail.com" title="email-button"
-            ><i class="bi bi-link"></i
+            ><i class="bi bi-envelope"></i
           ></a>
         </nav>
         <div class="container">
@@ -165,15 +170,9 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/aos/aos.js" defer></script>
 
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>
