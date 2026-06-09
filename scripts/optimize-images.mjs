@@ -7,7 +7,7 @@ const portfolioDir = join(root, 'assets', 'img', 'portfolio');
 const source = join(portfolioDir, 'background.jpg');
 
 const heroVariants = [
-  { name: 'background-mobile.webp', width: 640, quality: 72 },
+  { name: 'background-mobile.webp', width: 480, quality: 68 },
   { name: 'background-tablet.webp', width: 1024, quality: 75 },
   { name: 'background.webp', width: 1920, quality: 78 },
 ];

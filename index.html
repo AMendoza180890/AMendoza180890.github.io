@@ -3,27 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>AMendoza|Portfolio</title>
-    <meta
-      name="description"
-      content="This portfolio showcases professional web development and IT solutions built using C#, PHP, JavaScript, Astro, Tailwind, MySQL, SQL Server, and CSS. Each project highlights modern design, clean architecture, and scalable functionality tailored to real-world needs. Explore a selection of high-quality digital solutions crafted with precision and industry-driven best practices.
-"
-    />
-    <meta
-      name="keywords"
-      content="developer, portfolio, freelancer, web development"
-    />
 
-    <!-- Security -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
-    />
-
-    <!-- LCP: preload hero image by viewport -->
+    <!-- LCP: discover hero image immediately -->
     <link
       rel="preload"
       as="image"
@@ -48,19 +29,57 @@
       media="(min-width: 1200px)"
       fetchpriority="high"
     />
+    <link rel="preload" href="assets/css/critical-index.css" as="style" />
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.ico" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <title>AMendoza|Portfolio</title>
+    <meta
+      name="description"
+      content="This portfolio showcases professional web development and IT solutions built using C#, PHP, JavaScript, Astro, Tailwind, MySQL, SQL Server, and CSS. Each project highlights modern design, clean architecture, and scalable functionality tailored to real-world needs. Explore a selection of high-quality digital solutions crafted with precision and industry-driven best practices.
+"
+    />
+    <meta
+      name="keywords"
+      content="developer, portfolio, freelancer, web development"
+    />
 
-    <!-- Fonts (async, minimal weights) -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    />
+
+    <!-- Critical CSS (above-the-fold only, ~2KB) -->
+    <link rel="stylesheet" href="assets/css/critical-index.css" />
+
+    <!-- Non-critical CSS (async) -->
+    <link
+      rel="stylesheet"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/main.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="assets/css/main.css" />
+    </noscript>
+
+    <!-- Fonts: desktop only (mobile uses system fonts for faster LCP text) -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" media="(min-width: 769px)" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin media="(min-width: 769px)" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@400;500;600&family=Raleway:wght@700&display=swap"
       media="print"
-      onload="this.media='all'"
+      onload="this.media='(min-width: 769px)'"
     />
     <noscript>
       <link
@@ -69,19 +88,6 @@
       />
     </noscript>
 
-    <!-- Vendor CSS Files -->
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/css/main.css" rel="stylesheet" />
-    <link
-      rel="preload"
-      href="assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
     <link
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
@@ -100,6 +106,10 @@
     <noscript>
       <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     </noscript>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
   </head>
 
   <body class="index-page">
@@ -138,28 +148,22 @@
     <main class="main dark-background">
       <!-- Hero Section -->
       <section id="hero" class="hero section dark-background">
-        <picture>
-          <source
-            media="(max-width: 767px)"
-            srcset="assets/img/portfolio/background-mobile.webp"
-            type="image/webp"
-          />
-          <source
-            media="(max-width: 1199px)"
-            srcset="assets/img/portfolio/background-tablet.webp"
-            type="image/webp"
-          />
-          <img
-            src="assets/img/portfolio/background.webp"
-            alt="banner of main home page about code"
-            class="img-fluid opacity-50 img-h"
-            width="1920"
-            height="1440"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </picture>
+        <img
+          src="assets/img/portfolio/background-mobile.webp"
+          srcset="
+            assets/img/portfolio/background-mobile.webp 480w,
+            assets/img/portfolio/background-tablet.webp 1024w,
+            assets/img/portfolio/background.webp 1920w
+          "
+          sizes="100vw"
+          alt="banner of main home page about code"
+          class="img-fluid opacity-50 img-h"
+          width="480"
+          height="360"
+          loading="eager"
+          fetchpriority="high"
+          decoding="sync"
+        />
         <div class="container ">
           <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center" >
@@ -260,7 +264,14 @@
       ><i class="bi bi-arrow-up-short"></i
     ></a>
 
-    <!-- Main JS File -->
-    <script src="assets/js/main.js" defer></script>
+    <!-- Main JS: after load to avoid competing with LCP on mobile -->
+    <script>
+      window.addEventListener("load", function () {
+        var s = document.createElement("script");
+        s.src = "assets/js/main.js";
+        s.defer = true;
+        document.body.appendChild(s);
+      });
+    </script>
   </body>
 </html>
