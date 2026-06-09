@@ -121,6 +121,13 @@ h6 {
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
+  pointer-events: none;
+}
+
+.header a,
+.header button,
+.header nav {
+  pointer-events: auto;
 }
 
 .header .logo {
@@ -291,17 +298,57 @@ h6 {
 /* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    appearance: none;
+    -webkit-appearance: none;
     color: var(--nav-color);
-    font-size: 28px;
-    line-height: 0;
-    margin-right: 10px;
+    background: transparent;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    line-height: 1;
     cursor: pointer;
     transition: color 0.3s;
+    margin-left: auto;
+    position: relative;
+    z-index: 10002;
+    flex-shrink: 0;
   }
 
-  .navmenu {
+  .mobile-nav-toggle .toggle-bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--nav-color);
+    border-radius: 1px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle .toggle-bar {
+    background-color: #fff;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle .toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .mobile-nav-active .mobile-nav-toggle .toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle .toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  #navmenu.navmenu {
     padding: 0;
-    z-index: 9997;
   }
 
   .navmenu ul {
@@ -393,12 +440,11 @@ h6 {
 
   .mobile-nav-active .mobile-nav-toggle {
     color: #fff;
-    position: absolute;
-    font-size: 32px;
+    position: fixed;
     top: 15px;
     right: 15px;
     margin-right: 0;
-    z-index: 9999;
+    z-index: 10002;
   }
 
   .mobile-nav-active .navmenu {
@@ -407,6 +453,7 @@ h6 {
     inset: 0;
     background: rgba(33, 37, 41, 0.8);
     transition: 0.3s;
+    z-index: 10001;
   }
 
   .mobile-nav-active .navmenu>ul {

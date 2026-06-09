@@ -88,15 +88,7 @@
       />
     </noscript>
 
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    </noscript>
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
     <link
       href="assets/vendor/aos/aos.css"
       rel="stylesheet"
@@ -140,8 +132,18 @@
               >
             </li>
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+        <button
+          type="button"
+          class="mobile-nav-toggle d-xl-none"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="navmenu"
+        >
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
       </div>
     </header>
 
@@ -264,14 +266,7 @@
       ><i class="bi bi-arrow-up-short"></i
     ></a>
 
-    <!-- Main JS: after load to avoid competing with LCP on mobile -->
-    <script>
-      window.addEventListener("load", function () {
-        var s = document.createElement("script");
-        s.src = "assets/js/main.js";
-        s.defer = true;
-        document.body.appendChild(s);
-      });
-    </script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>
