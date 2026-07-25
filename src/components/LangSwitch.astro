@@ -13,6 +13,6 @@ const esHref = `/es${pathWithoutLocale === '/' ? '/' : pathWithoutLocale}`;
 ---
 
 <div class="lang-switch" role="group" aria-label={t(locale, 'lang.switch')}>
-  <a href={enHref} class={locale === 'en' ? 'active' : undefined} hreflang="en" lang="en">EN</a>
-  <a href={esHref} class={locale === 'es' ? 'active' : undefined} hreflang="es" lang="es">ES</a>
+  <a href={enHref} aria-current={locale === 'en' ? 'true' : undefined} hreflang="en" lang="en">EN</a>
+  <a href={esHref} aria-current={locale === 'es' ? 'true' : undefined} hreflang="es" lang="es">ES</a>
 </div>

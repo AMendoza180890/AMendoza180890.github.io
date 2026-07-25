@@ -1,0 +1,76 @@
+---
+import type { Locale } from '../../i18n/ui';
+import { t } from '../../i18n/ui';
+import { site, experience } from '../../i18n/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<section class="section container" id="top">
+  <header class="section-head">
+    <p class="eyebrow">{t(locale, 'resume.eyebrow')}</p>
+    <h1>{t(locale, 'resume.pageTitle')}</h1>
+    <p class="lead">{t(locale, 'resume.summaryBody')}</p>
+  </header>
+
+  <div class="resume-columns">
+    <article class="card">
+      <h2 class="timeline-role">{t(locale, 'resume.summary')}</h2>
+      <p class="timeline-place">{site.name}</p>
+      <ul class="info-list">
+        <li>{t(locale, 'resume.location')}</li>
+        <li><a href={`tel:${site.phone}`}>{site.phoneDisplay}</a></li>
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2 class="timeline-role">{t(locale, 'resume.education')}</h2>
+      <p class="timeline-place">{t(locale, 'resume.degree')} · 2010 – 2014</p>
+      <ul class="info-list">
+        <li>{t(locale, 'resume.university')}</li>
+      </ul>
+      <p class="info-list">{t(locale, 'resume.coursework')}</p>
+    </article>
+  </div>
+
+  <div class="section--tight">
+    <div class="section-head">
+      <h2>{t(locale, 'resume.experience')}</h2>
+    </div>
+
+    <div class="timeline">
+      {experience[locale].map((job) => (
+        <article class="timeline-item">
+          <div class="timeline-head">
+            <h3 class="timeline-role">{job.role}</h3>
+            <span class="timeline-period">{job.period}</span>
+          </div>
+          <p class="timeline-place">
+            <a href={job.companyUrl} rel="noopener noreferrer" target="_blank">{job.company}</a>
+            <span aria-hidden="true"> · </span>{job.place}
+          </p>
+          <ul class="bullet-list">
+            {job.bullets.map((bullet) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  <aside class="cta-card">
+    <div>
+      <h2 class="timeline-role">{t(locale, 'resume.downloadTitle')}</h2>
+      <p class="timeline-place">{t(locale, 'resume.downloadText')}</p>
+    </div>
+    <a class="btn btn-primary" href={site.resumePdf} download="Resume.pdf">
+      {t(locale, 'resume.downloadBtn')}
+    </a>
+  </aside>
+</section>

@@ -2,39 +2,42 @@
 import type { Locale } from '../i18n/ui';
 import { t } from '../i18n/ui';
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import { site } from '../i18n/content';
 import ThemeToggle from './ThemeToggle.astro';
 import LangSwitch from './LangSwitch.astro';
 
 interface Props {
   locale: Locale;
   activeNav?: 'home' | 'resume' | 'projects';
-  pageTitle?: string;
 }
 
-const { locale, activeNav = 'home', pageTitle } = Astro.props;
+const { locale, activeNav = 'home' } = Astro.props;
 
-const homeUrl = getRelativeLocaleUrl(locale, '');
-const resumeUrl = getRelativeLocaleUrl(locale, 'resume');
-const projectsUrl = getRelativeLocaleUrl(locale, 'projects');
+const links = [
+  { key: 'home', href: getRelativeLocaleUrl(locale, ''), label: t(locale, 'nav.home') },
+  { key: 'resume', href: getRelativeLocaleUrl(locale, 'resume'), label: t(locale, 'nav.resume') },
+  { key: 'projects', href: getRelativeLocaleUrl(locale, 'projects'), label: t(locale, 'nav.projects') },
+] as const;
 ---
 
 <header id="header" class="header">
   <div class="container-wide header-inner">
-    <a class="logo" href={homeUrl}>{pageTitle ?? 'AMendoza'}</a>
+    <a class="logo" href={getRelativeLocaleUrl(locale, '')}>
+      <span class="logo-mark" aria-hidden="true">AM</span>
+      {site.brand}
+    </a>
 
-    <nav id="navmenu" class="navmenu" aria-label="Main">
+    <nav id="navmenu" class="navmenu" aria-label={t(locale, 'nav.main')}>
       <ul>
+        {links.map((link) => (
+          <li>
+            <a href={link.href} aria-current={activeNav === link.key ? 'page' : undefined}>
+              {link.label}
+            </a>
+          </li>
+        ))}
         <li>
-          <a href={homeUrl} class={activeNav === 'home' ? 'active' : undefined}>{t(locale, 'nav.home')}</a>
-        </li>
-        <li>
-          <a href={resumeUrl} class={activeNav === 'resume' ? 'active' : undefined}>{t(locale, 'nav.resume')}</a>
-        </li>
-        <li>
-          <a href={projectsUrl} class={activeNav === 'projects' ? 'active' : undefined}>{t(locale, 'nav.projects')}</a>
-        </li>
-        <li>
-          <a href="https://github.com/AMendoza180890" rel="noopener noreferrer" target="_blank">{t(locale, 'nav.portfolio')}</a>
+          <a href={site.github} rel="noopener noreferrer" target="_blank">{t(locale, 'nav.portfolio')}</a>
         </li>
       </ul>
     </nav>
@@ -49,6 +52,8 @@ const projectsUrl = getRelativeLocaleUrl(locale, 'projects');
         aria-expanded="false"
         aria-controls="navmenu"
         data-nav-toggle
+        data-label-open={t(locale, 'nav.openMenu')}
+        data-label-close={t(locale, 'nav.closeMenu')}
       >
         <span class="toggle-bar"></span>
         <span class="toggle-bar"></span>
