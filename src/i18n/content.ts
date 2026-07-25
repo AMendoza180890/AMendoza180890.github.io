@@ -11,24 +11,30 @@ export const site = {
   resumePdf: '/file/Resume.pdf',
 };
 
-export const skills = {
+export type SkillGroup = {
+  label: string;
+  items: string[];
+};
+
+const frontend = ['Astro', 'React', 'React Native', 'Expo', 'TypeScript', 'Tailwind CSS'];
+const backend = ['Node.js', 'Supabase', 'PostgreSQL', 'MySQL', 'Microsoft SQL Server', 'Zod'];
+const cloud = ['Azure', 'Google Cloud', 'Vercel', 'Cloudflare', 'Linux', 'PM2'];
+const tools = ['Git', 'pnpm', 'VS Code'];
+
+export const skills: Record<Locale, SkillGroup[]> = {
   en: [
-    { label: 'Programming Languages', value: 'C#, PHP, JavaScript' },
-    { label: 'Web Technologies', value: 'HTML5, CSS3, Bootstrap, Tailwind CSS' },
-    { label: 'Frameworks', value: '.NET, Laravel, React' },
-    { label: 'Databases', value: 'MySQL, SQL Server, Mongo DB' },
-    { label: 'Version Control', value: 'Git, GitHub' },
-    { label: 'Other Tools', value: 'Visual Studio, VS Code, Postman' },
+    { label: 'Frontend', items: frontend },
+    { label: 'Backend & Data', items: backend },
+    { label: 'Cloud & DevOps', items: cloud },
+    { label: 'Tools', items: tools },
   ],
   es: [
-    { label: 'Lenguajes de Programación', value: 'C#, PHP, JavaScript' },
-    { label: 'Tecnologías Web', value: 'HTML5, CSS3, Bootstrap, Tailwind CSS' },
-    { label: 'Frameworks', value: '.NET, Laravel, React' },
-    { label: 'Bases de Datos', value: 'MySQL, SQL Server, Mongo DB' },
-    { label: 'Control de Versiones', value: 'Git, GitHub' },
-    { label: 'Otras Herramientas', value: 'Visual Studio, VS Code, Postman' },
+    { label: 'Frontend', items: frontend },
+    { label: 'Backend y Datos', items: backend },
+    { label: 'Cloud y DevOps', items: cloud },
+    { label: 'Herramientas', items: tools },
   ],
-} as const;
+};
 
 export type ExperienceItem = {
   company: string;

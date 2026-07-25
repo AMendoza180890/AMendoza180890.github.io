@@ -22,7 +22,6 @@ const { locale } = Astro.props;
       <h2 class="timeline-role">{t(locale, 'resume.summary')}</h2>
       <p class="timeline-place">{site.name}</p>
       <ul class="info-list">
-        <li>{t(locale, 'resume.location')}</li>
         <li><a href={`tel:${site.phone}`}>{site.phoneDisplay}</a></li>
         <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
       </ul>

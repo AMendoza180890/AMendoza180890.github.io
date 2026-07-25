@@ -21,7 +21,6 @@ const year = new Date().getFullYear();
       <div class="footer-contact">
         <a href={`mailto:${site.email}`}>{site.email}</a>
         <a href={`tel:${site.phone}`}>{site.phoneDisplay}</a>
-        <span>{t(locale, 'resume.location')}</span>
       </div>
 
       <SocialLinks label={t(locale, 'footer.contact')} />
@@ -29,8 +28,6 @@ const year = new Date().getFullYear();
 
     <div class="footer-bottom">
       <span>© {year} {site.brand} · {t(locale, 'footer.copyright')}</span>
-      <span aria-hidden="true">·</span>
-      <span>{t(locale, 'footer.builtWith')}</span>
     </div>
   </div>
 </footer>

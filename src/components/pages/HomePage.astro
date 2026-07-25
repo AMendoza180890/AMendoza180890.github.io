@@ -31,7 +31,7 @@ const { locale } = Astro.props;
       <p class="eyebrow">{t(locale, 'hero.eyebrow')}</p>
       <h1>{site.name}</h1>
       <span class="hero-role">
-        {t(locale, 'hero.imA')}
+        {t(locale, 'hero.imA')}{' '}
         <span class="typed" data-typed-items={t(locale, 'hero.typed')}></span>
       </span>
 
@@ -66,11 +66,15 @@ const { locale } = Astro.props;
     <h2>{t(locale, 'skills.title')}</h2>
   </div>
 
-  <ul class="grid grid--2 grid--3">
-    {skills[locale].map((item) => (
+  <ul class="grid grid--2">
+    {skills[locale].map((group) => (
       <li class="card skill-card">
-        <h3>{item.label}</h3>
-        <p>{item.value}</p>
+        <h3>{group.label}</h3>
+        <ul class="chip-list">
+          {group.items.map((item) => (
+            <li class="chip">{item}</li>
+          ))}
+        </ul>
       </li>
     ))}
   </ul>
