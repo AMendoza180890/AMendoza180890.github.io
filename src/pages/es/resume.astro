@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t } from '../../i18n/ui';
+import { site, experience } from '../../i18n/content';
+
+const locale = 'es' as const;
+---
+
+<BaseLayout
+  locale={locale}
+  title={`${site.brand} | Currículum`}
+  activeNav="resume"
+  pageTitle={t(locale, 'resume.pageTitle')}
+>
+  <section class="page container" id="top">
+    <div class="resume-grid">
+      <article>
+        <h3 class="resume-title">{t(locale, 'resume.summary')}</h3>
+        <div class="resume-item">
+          <h4>{site.name}</h4>
+          <p><em>{t(locale, 'resume.summaryBody')}</em></p>
+          <ul>
+            <li>{t(locale, 'resume.location')}</li>
+            <li>{site.phoneDisplay}</li>
+            <li>{site.email}</li>
+          </ul>
+        </div>
+      </article>
+
+      <article>
+        <h3 class="resume-title">{t(locale, 'resume.education')}</h3>
+        <div class="resume-item">
+          <h4>{t(locale, 'resume.degree')}</h4>
+          <h5>2010 - 2014</h5>
+          <p><em>{t(locale, 'resume.university')}</em></p>
+          <p>{t(locale, 'resume.coursework')}</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="experience-section">
+      <h3 class="resume-title">{t(locale, 'resume.experience')}</h3>
+      <div class="resume-grid">
+        {experience[locale].map((job) => (
+          <article class="resume-item">
+            <h4>
+              <a href={job.companyUrl} rel="noopener noreferrer" target="_blank">{job.company}</a>
+              {' '}| {job.role}
+            </h4>
+            <h5>{job.period}</h5>
+            <p><em>{job.place}</em></p>
+            <ul>
+              {job.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+
+        <article class="resume-item">
+          <h3 class="resume-title">{t(locale, 'resume.downloadTitle')}</h3>
+          <p>{t(locale, 'resume.downloadText')}</p>
+          <a class="btn btn-primary" href={site.resumePdf} download="Resume.pdf">
+            {t(locale, 'resume.downloadBtn')}
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

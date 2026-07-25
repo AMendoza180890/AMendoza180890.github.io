@@ -1,0 +1,59 @@
+---
+import type { Locale } from '../i18n/ui';
+import { t } from '../i18n/ui';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import ThemeToggle from './ThemeToggle.astro';
+import LangSwitch from './LangSwitch.astro';
+
+interface Props {
+  locale: Locale;
+  activeNav?: 'home' | 'resume' | 'projects';
+  pageTitle?: string;
+}
+
+const { locale, activeNav = 'home', pageTitle } = Astro.props;
+
+const homeUrl = getRelativeLocaleUrl(locale, '');
+const resumeUrl = getRelativeLocaleUrl(locale, 'resume');
+const projectsUrl = getRelativeLocaleUrl(locale, 'projects');
+---
+
+<header id="header" class="header">
+  <div class="container-wide header-inner">
+    <a class="logo" href={homeUrl}>{pageTitle ?? 'AMendoza'}</a>
+
+    <nav id="navmenu" class="navmenu" aria-label="Main">
+      <ul>
+        <li>
+          <a href={homeUrl} class={activeNav === 'home' ? 'active' : undefined}>{t(locale, 'nav.home')}</a>
+        </li>
+        <li>
+          <a href={resumeUrl} class={activeNav === 'resume' ? 'active' : undefined}>{t(locale, 'nav.resume')}</a>
+        </li>
+        <li>
+          <a href={projectsUrl} class={activeNav === 'projects' ? 'active' : undefined}>{t(locale, 'nav.projects')}</a>
+        </li>
+        <li>
+          <a href="https://github.com/AMendoza180890" rel="noopener noreferrer" target="_blank">{t(locale, 'nav.portfolio')}</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <LangSwitch locale={locale} />
+      <ThemeToggle locale={locale} />
+      <button
+        type="button"
+        class="mobile-nav-toggle"
+        aria-label={t(locale, 'nav.openMenu')}
+        aria-expanded="false"
+        aria-controls="navmenu"
+        data-nav-toggle
+      >
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>

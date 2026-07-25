@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t } from '../../i18n/ui';
+import { site, projects } from '../../i18n/content';
+
+const locale = 'en' as const;
+---
+
+<BaseLayout
+  locale={locale}
+  title={`${site.brand} | Projects`}
+  activeNav="projects"
+  pageTitle={t(locale, 'projects.pageTitle')}
+>
+  <section class="page container" id="top">
+    <h2 class="page-title">{t(locale, 'projects.heading')}</h2>
+    <p class="page-intro">{t(locale, 'projects.intro')}</p>
+
+    <div class="projects-grid">
+      {projects[locale].map((project) => (
+        <a class="project-card" href={project.url} rel="noopener noreferrer" target="_blank">
+          <img src={project.image} alt={project.imageAlt} width="800" height="600" loading="lazy" decoding="async" />
+          <div class="project-card-body">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <ul class="stack-list">
+              {project.stack.map((tech) => (
+                <li>{tech}</li>
+              ))}
+            </ul>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

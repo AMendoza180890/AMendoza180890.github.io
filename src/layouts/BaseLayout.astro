@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import type { Locale } from '../i18n/ui';
+import { t } from '../i18n/ui';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description?: string;
+  activeNav?: 'home' | 'resume' | 'projects';
+  pageTitle?: string;
+}
+
+const {
+  locale,
+  title,
+  description = t(locale, 'meta.description'),
+  activeNav = 'home',
+  pageTitle,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const alternateEn = Astro.url.pathname.replace(/^\/(en|es)/, '/en');
+const alternateEs = Astro.url.pathname.replace(/^\/(en|es)/, '/es');
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="developer, portfolio, freelancer, web development, desarrollador" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL(alternateEn, Astro.site).toString()} />
+    <link rel="alternate" hreflang="es" href={new URL(alternateEs, Astro.site).toString()} />
+    <link rel="alternate" hreflang="x-default" href={new URL(alternateEn, Astro.site).toString()} />
+
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply theme before paint to avoid flash -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored === 'light' || stored === 'dark' ? stored : prefersDark ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <Header locale={locale} activeNav={activeNav} pageTitle={pageTitle} />
+    <main>
+      <slot />
+    </main>
+    <Footer locale={locale} />
+
+    <a href="#top" class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 14l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+
+    <script>
+      import '../scripts/site.ts';
+    </script>
+  </body>
+</html>
