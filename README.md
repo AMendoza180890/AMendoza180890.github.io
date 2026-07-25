@@ -58,26 +58,33 @@ Site URL: `https://amendoza180890.github.io`
 
 ## Deploy on Hostinger (Git)
 
-Because Astro is a build step, Hostinger must publish **`dist/`**, not the repo root.
+Hostinger shared hosting usually **does not build Astro**. This repo includes the built **`dist/`** folder so Git deploy can publish static files.
 
-### Option A — Hostinger Node / build (recommended if available)
+### Required Hostinger settings
 
-In Hostinger → Website → Git / Node.js:
+In hPanel → your website → **Git** (or Advanced → Git):
 
 | Setting | Value |
 |--------|--------|
-| Build command | `pnpm install --frozen-lockfile && pnpm build` |
-| Output / public directory | `dist` |
-| Node version | 20+ |
+| Repository | `https://github.com/AMendoza180890/AMendoza180890.github.io.git` |
+| Branch | `main` |
+| **Deploy / public directory** | **`dist`** |
 
-If the host cannot run `pnpm` directly, prefix it with Corepack:
-`corepack enable pnpm && pnpm install --frozen-lockfile && pnpm build`
+Important: the document root must be **`dist`**, not the repo root.  
+If Hostinger only clones into `public_html`, set the domain document root to `public_html/dist` (or equivalent).
 
-### Option B — Deploy only the build output
+### After each content change
 
-1. Run `pnpm build` locally (or in GitHub Actions).
-2. Point Hostinger’s document root at the contents of `dist/`, **or**
-3. Use a GitHub Action that builds and syncs `dist/` to Hostinger via FTP/SFTP.
+1. Locally: `pnpm build`
+2. Commit the updated `dist/` together with your source changes
+3. `git push`
+4. In Hostinger, pull / redeploy (or wait for auto-deploy)
+
+### Manual upload (alternative)
+
+1. `pnpm build`
+2. hPanel → **Files** → **File Manager** → `public_html`
+3. Upload **the contents of** `dist/` (not the `dist` folder itself as a nested wrapper if `public_html` is already the site root)
 
 ### Important URL change
 

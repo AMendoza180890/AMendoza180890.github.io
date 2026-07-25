@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AMendoza | Portfolio</title><meta name="description" content="Allan Mendoza — Web Developer Portfolio"><link rel="icon" href="/favicon.ico"><meta http-equiv="refresh" content="0;url=/en/"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('preferred-locale');
+          var nav = (navigator.language || navigator.languages && navigator.languages[0] || 'en').toLowerCase();
+          // Browser/location language preference (navigator.language reflects OS/browser locale settings)
+          var locale = stored === 'es' || stored === 'en'
+            ? stored
+            : nav.startsWith('es')
+              ? 'es'
+              : 'en';
+          localStorage.setItem('preferred-locale', locale);
+          window.location.replace('/' + locale + '/');
+        } catch (e) {
+          window.location.replace('/en/');
+        }
+      })();
+    </script></head><body><p><a href="/en/">English</a> · <a href="/es/">Español</a></p></body></html>

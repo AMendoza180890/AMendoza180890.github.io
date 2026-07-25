@@ -1,5 +1,4 @@
 node_modules/
-dist/
 .astro/
 .DS_Store
 *.log
@@ -9,3 +8,6 @@ dist/
 # This project uses pnpm; keep other lockfiles out
 package-lock.json
 yarn.lock
+
+# dist/ is committed so Hostinger Git can publish the static site
+# without a Node build step on the server
