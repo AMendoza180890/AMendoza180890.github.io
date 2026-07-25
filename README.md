@@ -45,6 +45,17 @@ pnpm preview
 
 Production files are written to **`dist/`**.
 
+## Deploy on GitHub Pages
+
+This repo uses **GitHub Actions** (not Jekyll). Astro builds to `dist/` and publishes that folder.
+
+1. Push to `main` (the workflow `.github/workflows/deploy.yml` runs automatically).
+2. In GitHub → **Settings** → **Pages** → **Build and deployment** → **Source**, choose **GitHub Actions** (not “Deploy from a branch”).
+
+If Source stays on “Deploy from a branch”, GitHub tries to build with **Jekyll** and the deploy fails on an Astro project.
+
+Site URL: `https://amendoza180890.github.io`
+
 ## Deploy on Hostinger (Git)
 
 Because Astro is a build step, Hostinger must publish **`dist/`**, not the repo root.
