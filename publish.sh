@@ -8,7 +8,11 @@ DST="/home/u701829741/domains/allanmendoza.tech/public_html/"
   echo "=== $(date) ==="
   echo "Origen: $SRC"
   echo "Destino: $DST"
-  rsync -av "$SRC" "$DST"
-  echo "Deploy OK"
+  if rsync -av --delete "$SRC" "$DST" >> "$LOG" 2>&1 ; then
+    echo "Deploy OK"
+  else
+    echo "Deploy Failed"
+    exit 1
+  fi
   echo
-} >> "$LOG" 2>&1
+} 
