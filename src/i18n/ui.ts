@@ -42,8 +42,8 @@ export const ui = {
     'resume.summaryBody':
       'Full-stack developer with experience in creating efficient and scalable applications for various industries. My goal is to apply expertise in web technologies, RESTful services implementation, and microservices architecture to develop innovative solutions that optimize processes and ensure quality and performance.',
     'resume.education': 'Education',
-    'resume.degree': "Bachelor's Degree in Computer Science",
-    'resume.university': 'Universidad Nacional Autónoma de Nicaragua, Managua, Nicaragua',
+    'resume.degree': 'Computer Engineering and Telematics',
+    'resume.university': 'Universidad de Managua, Managua, Nicaragua',
     'resume.coursework':
       'Relevant Coursework: Data Structures and Algorithms, Database Management Systems, Web Development, Software Engineering, Operating Systems, Computer Networks, Object-Oriented Programming, and Mobile Application Development.',
     'resume.experience': 'Professional Experience',
@@ -91,8 +91,8 @@ export const ui = {
     'resume.summaryBody':
       'Desarrollador full-stack con experiencia en la creación de aplicaciones eficientes y escalables para diversas industrias. Mi objetivo es aplicar experiencia en tecnologías web, implementación de servicios RESTful y arquitectura de microservicios para desarrollar soluciones innovadoras que optimicen procesos y aseguren calidad y rendimiento.',
     'resume.education': 'Educación',
-    'resume.degree': 'Licenciatura en Ciencias de la Computación',
-    'resume.university': 'Universidad Nacional Autónoma de Nicaragua, Managua, Nicaragua',
+    'resume.degree': 'Ingeniería en Computación y Telemática',
+    'resume.university': 'Universidad de Managua, Managua, Nicaragua',
     'resume.coursework':
       'Cursos relevantes: Estructuras de Datos y Algoritmos, Sistemas de Gestión de Bases de Datos, Desarrollo Web, Ingeniería de Software, Sistemas Operativos, Redes de Computadoras, Programación Orientada a Objetos y Desarrollo de Aplicaciones Móviles.',
     'resume.experience': 'Experiencia Profesional',
