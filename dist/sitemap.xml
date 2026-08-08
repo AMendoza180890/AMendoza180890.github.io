@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://allanmendoza.tech/en/</loc>
+    <lastmod>2026-08-08T19:49:12.109Z</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://allanmendoza.tech/en/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://allanmendoza.tech/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://allanmendoza.tech/en/" />
+  </url>
+  <url>
+    <loc>https://allanmendoza.tech/en/resume/</loc>
+    <lastmod>2026-08-08T19:49:12.109Z</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://allanmendoza.tech/en/resume/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://allanmendoza.tech/es/resume/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://allanmendoza.tech/en/resume/" />
+  </url>
+  <url>
+    <loc>https://allanmendoza.tech/en/projects/</loc>
+    <lastmod>2026-08-08T19:49:12.109Z</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://allanmendoza.tech/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://allanmendoza.tech/es/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://allanmendoza.tech/en/projects/" />
+  </url>
+  <url>
+    <loc>https://allanmendoza.tech/es/</loc>
+    <lastmod>2026-08-08T19:49:12.109Z</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://allanmendoza.tech/en/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://allanmendoza.tech/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://allanmendoza.tech/en/" />
+  </url>
+  <url>
+    <loc>https://allanmendoza.tech/es/resume/</loc>
+    <lastmod>2026-08-08T19:49:12.109Z</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://allanmendoza.tech/en/resume/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://allanmendoza.tech/es/resume/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://allanmendoza.tech/en/resume/" />
+  </url>
+  <url>
+    <loc>https://allanmendoza.tech/es/projects/</loc>
+    <lastmod>2026-08-08T19:49:12.109Z</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://allanmendoza.tech/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://allanmendoza.tech/es/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://allanmendoza.tech/en/projects/" />
+  </url>
+</urlset>
