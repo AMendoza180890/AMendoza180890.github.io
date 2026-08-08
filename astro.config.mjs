@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
+const site = 'https://allanmendoza.tech';
+
 export default defineConfig({
-  site: 'https://amendoza180890.github.io',
+  site,
   output: 'static',
   trailingSlash: 'always',
   build: {
@@ -19,7 +21,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Root `/` only redirects by language — keep content pages in the sitemap.
-      filter: (page) => page !== 'https://amendoza180890.github.io/',
+      filter: (page) => page !== `${site}/`,
       i18n: {
         defaultLocale: 'en',
         locales: {
