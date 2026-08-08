@@ -33,6 +33,7 @@ const alternateEs = Astro.url.pathname.replace(/^\/(en|es)/, '/es');
     <meta name="description" content={description} />
     <meta name="keywords" content="developer, portfolio, freelancer, web development, desarrollador" />
     <link rel="canonical" href={canonical} />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" hreflang="en" href={new URL(alternateEn, Astro.site).toString()} />
     <link rel="alternate" hreflang="es" href={new URL(alternateEs, Astro.site).toString()} />
     <link rel="alternate" hreflang="x-default" href={new URL(alternateEn, Astro.site).toString()} />
