@@ -30,10 +30,10 @@ const { locale } = Astro.props;
     <div class="hero-inner">
       <p class="eyebrow">{t(locale, 'hero.eyebrow')}</p>
       <h1>{site.name}</h1>
-      <span class="hero-role">
+      <p class="hero-role">
         {t(locale, 'hero.imA')}{' '}
         <span class="typed" data-typed-items={t(locale, 'hero.typed')}></span>
-      </span>
+      </p>
 
       <div class="hero-actions">
         <a class="btn btn-primary" href={getRelativeLocaleUrl(locale, 'projects')}>

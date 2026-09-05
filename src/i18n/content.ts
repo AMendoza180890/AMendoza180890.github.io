@@ -9,6 +9,18 @@ export const site = {
   github: 'https://github.com/AMendoza180890',
   linkedin: 'https://www.linkedin.com/in/amendoza1890/',
   resumePdf: '/file/Resume.pdf',
+  ogImage: '/img/favicon_io/android-chrome-512x512.png',
+  knowsAbout: [
+    'Astro',
+    'React',
+    'React Native',
+    'TypeScript',
+    'Node.js',
+    'Supabase',
+    'PostgreSQL',
+    'Azure',
+    'Google Cloud',
+  ],
 };
 
 export type SkillGroup = {

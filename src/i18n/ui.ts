@@ -35,7 +35,12 @@ export const ui = {
     'footer.copyright': 'Portfolio',
     'footer.headline': "Let's build something together",
     'meta.description':
-      'This portfolio showcases professional web development and IT solutions built using C#, PHP, JavaScript, Astro, Tailwind, MySQL, SQL Server, and CSS.',
+      'Allan Mendoza — full-stack developer with 10+ years of experience building web and mobile apps with Astro, React, TypeScript, Node.js, and cloud platforms.',
+    'meta.resumeDescription':
+      'Resume of Allan Mendoza, full-stack developer: education, professional experience, and technical stack in frontend, backend, and cloud.',
+    'meta.projectsDescription':
+      'Selected projects by Allan Mendoza, including websites and information systems for non-profits built with PHP, MySQL, WordPress, and modern web tools.',
+    'meta.jobTitle': 'Full-Stack Developer',
     'resume.pageTitle': 'Resume',
     'resume.eyebrow': 'Career',
     'resume.summary': 'Summary',
@@ -84,7 +89,12 @@ export const ui = {
     'footer.copyright': 'Portafolio',
     'footer.headline': 'Construyamos algo juntos',
     'meta.description':
-      'Este portafolio muestra soluciones profesionales de desarrollo web y TI construidas con C#, PHP, JavaScript, Astro, Tailwind, MySQL, SQL Server y CSS.',
+      'Allan Mendoza — desarrollador full-stack con más de 10 años de experiencia creando apps web y móviles con Astro, React, TypeScript, Node.js y plataformas cloud.',
+    'meta.resumeDescription':
+      'Currículum de Allan Mendoza, desarrollador full-stack: educación, experiencia profesional y stack técnico en frontend, backend y cloud.',
+    'meta.projectsDescription':
+      'Proyectos seleccionados de Allan Mendoza, incluyendo sitios web y sistemas de información para organizaciones sin fines de lucro con PHP, MySQL, WordPress y herramientas web modernas.',
+    'meta.jobTitle': 'Desarrollador Full-Stack',
     'resume.pageTitle': 'Currículum',
     'resume.eyebrow': 'Trayectoria',
     'resume.summary': 'Resumen',

@@ -1,11 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HomePage from '../../components/pages/HomePage.astro';
+import { t } from '../../i18n/ui';
 import { site } from '../../i18n/content';
 
 const locale = 'en' as const;
 ---
 
-<BaseLayout locale={locale} title={`${site.name} | Portfolio`} activeNav="home">
+<BaseLayout
+  locale={locale}
+  title={`${site.name} | ${t(locale, 'meta.jobTitle')}`}
+  description={t(locale, 'meta.description')}
+  activeNav="home"
+>
   <HomePage locale={locale} />
 </BaseLayout>

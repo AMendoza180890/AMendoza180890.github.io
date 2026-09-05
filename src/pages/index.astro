@@ -4,14 +4,18 @@
  * then redirect to /en/ or /es/. Fully static-friendly.
  */
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AMendoza | Portfolio</title>
-    <meta name="description" content="Allan Mendoza — Web Developer Portfolio" />
+    <title>Allan Mendoza | Portfolio</title>
+    <meta
+      name="description"
+      content="Allan Mendoza — full-stack developer portfolio. Choose English or Spanish."
+    />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://allanmendoza.tech/en/" />
     <link rel="icon" href="/favicon.ico" />
     <meta http-equiv="refresh" content="0;url=/en/" />
     <script is:inline>
@@ -19,7 +23,6 @@
         try {
           var stored = localStorage.getItem('preferred-locale');
           var nav = (navigator.language || navigator.languages && navigator.languages[0] || 'en').toLowerCase();
-          // Browser/location language preference (navigator.language reflects OS/browser locale settings)
           var locale = stored === 'es' || stored === 'en'
             ? stored
             : nav.startsWith('es')

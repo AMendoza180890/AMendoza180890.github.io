@@ -7,6 +7,11 @@ import { site } from '../../i18n/content';
 const locale = 'en' as const;
 ---
 
-<BaseLayout locale={locale} title={`${site.brand} | ${t(locale, 'projects.pageTitle')}`} activeNav="projects">
+<BaseLayout
+  locale={locale}
+  title={`${t(locale, 'projects.pageTitle')} | ${site.name}`}
+  description={t(locale, 'meta.projectsDescription')}
+  activeNav="projects"
+>
   <ProjectsPage locale={locale} />
 </BaseLayout>

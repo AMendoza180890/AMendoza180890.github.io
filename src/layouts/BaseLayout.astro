@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import type { Locale } from '../i18n/ui';
 import { t } from '../i18n/ui';
+import { site } from '../i18n/content';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -19,37 +20,103 @@ const {
   activeNav = 'home',
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const siteUrl = Astro.site ?? new URL('https://allanmendoza.tech');
+const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 const alternateEn = Astro.url.pathname.replace(/^\/(en|es)/, '/en');
 const alternateEs = Astro.url.pathname.replace(/^\/(en|es)/, '/es');
+const ogImage = new URL(site.ogImage, siteUrl).toString();
+const ogLocale = locale === 'es' ? 'es_ES' : 'en_US';
+const ogLocaleAlt = locale === 'es' ? 'en_US' : 'es_ES';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl.origin}/#website`,
+      url: siteUrl.origin,
+      name: `${site.name} Portfolio`,
+      description,
+      inLanguage: [locale === 'es' ? 'es-ES' : 'en-US'],
+      publisher: { '@id': `${siteUrl.origin}/#person` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${siteUrl.origin}/#person`,
+      name: site.name,
+      url: siteUrl.origin,
+      email: site.email,
+      telephone: site.phone,
+      jobTitle: t(locale, 'meta.jobTitle'),
+      image: ogImage,
+      sameAs: [site.github, site.linkedin],
+      knowsAbout: site.knowsAbout,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': `${siteUrl.origin}/#website` },
+      about: { '@id': `${siteUrl.origin}/#person` },
+      inLanguage: locale === 'es' ? 'es-ES' : 'en-US',
+    },
+  ],
+};
 ---
 
 <!doctype html>
 <html lang={locale}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="developer, portfolio, freelancer, web development, desarrollador" />
+    <meta name="author" content={site.name} />
+    <meta
+      name="keywords"
+      content={
+        locale === 'es'
+          ? 'desarrollador full-stack, portfolio, Astro, React, TypeScript, Node.js, Allan Mendoza'
+          : 'full-stack developer, portfolio, Astro, React, TypeScript, Node.js, Allan Mendoza'
+      }
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#0b0f0e" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fbfcfb" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="format-detection" content="telephone=no" />
+
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-    <link rel="alternate" hreflang="en" href={new URL(alternateEn, Astro.site).toString()} />
-    <link rel="alternate" hreflang="es" href={new URL(alternateEs, Astro.site).toString()} />
-    <link rel="alternate" hreflang="x-default" href={new URL(alternateEn, Astro.site).toString()} />
+    <link rel="alternate" hreflang="en" href={new URL(alternateEn, siteUrl).toString()} />
+    <link rel="alternate" hreflang="es" href={new URL(alternateEs, siteUrl).toString()} />
+    <link rel="alternate" hreflang="x-default" href={new URL(alternateEn, siteUrl).toString()} />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.brand} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content={locale === 'es' ? 'es_ES' : 'en_US'} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={`${site.name} — ${t(locale, 'meta.jobTitle')}`} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={`${site.name} — ${t(locale, 'meta.jobTitle')}`} />
 
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
 
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_io/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,6 +125,8 @@ const alternateEs = Astro.url.pathname.replace(/^\/(en|es)/, '/es');
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Apply theme before paint to avoid flash -->
     <script is:inline>
