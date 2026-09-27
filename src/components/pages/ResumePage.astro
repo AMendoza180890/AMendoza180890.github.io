@@ -1,13 +1,14 @@
 ---
 import type { Locale } from '../../i18n/ui';
 import { t } from '../../i18n/ui';
-import { site, experience } from '../../i18n/content';
+import { site, experience, getResumePdf } from '../../i18n/content';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
+const resumePdf = getResumePdf(locale);
 ---
 
 <section class="section container" id="top">
@@ -24,16 +25,17 @@ const { locale } = Astro.props;
       <ul class="info-list">
         <li><a href={`tel:${site.phone}`}>{site.phoneDisplay}</a></li>
         <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li>{t(locale, 'resume.languagesBody')}</li>
       </ul>
     </article>
 
     <article class="card">
       <h2 class="timeline-role">{t(locale, 'resume.education')}</h2>
-      <p class="timeline-place">{t(locale, 'resume.degree')} · 2012 – 2017</p>
+      <p class="timeline-place">{t(locale, 'resume.degree')}</p>
       <ul class="info-list">
         <li>{t(locale, 'resume.university')}</li>
+        <li>{t(locale, 'resume.certifications')}</li>
       </ul>
-      <p class="info-list">{t(locale, 'resume.coursework')}</p>
     </article>
   </div>
 
@@ -50,17 +52,64 @@ const { locale } = Astro.props;
             <span class="timeline-period">{job.period}</span>
           </div>
           <p class="timeline-place">
-            <a href={job.companyUrl} rel="noopener noreferrer" target="_blank">{job.company}</a>
+            {job.companyUrl ? (
+              <a href={job.companyUrl} rel="noopener noreferrer" target="_blank">{job.company}</a>
+            ) : (
+              job.company
+            )}
             <span aria-hidden="true"> · </span>{job.place}
           </p>
-          <ul class="bullet-list">
-            {job.bullets.map((bullet) => (
-              <li>{bullet}</li>
-            ))}
-          </ul>
+          {job.note && <p class="timeline-note">{job.note}</p>}
+          {job.bullets && job.bullets.length > 0 && (
+            <ul class="bullet-list">
+              {job.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          )}
+          {job.engagements && job.engagements.length > 0 && (
+            <div class="engagements">
+              {job.engagements.map((engagement) => (
+                <div class="engagement">
+                  <div class="engagement-head">
+                    <h4 class="engagement-title">
+                      {engagement.url ? (
+                        <a href={engagement.url} rel="noopener noreferrer" target="_blank">
+                          {engagement.name}
+                        </a>
+                      ) : (
+                        engagement.name
+                      )}
+                    </h4>
+                    {engagement.period && (
+                      <span class="timeline-period">{engagement.period}</span>
+                    )}
+                  </div>
+                  {engagement.stack && (
+                    <p class="engagement-stack">{engagement.stack}</p>
+                  )}
+                  <ul class="bullet-list">
+                    {engagement.bullets.map((bullet) => (
+                      <li>{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
         </article>
       ))}
     </div>
+  </div>
+
+  <div class="section--tight">
+    <div class="section-head">
+      <h2>{t(locale, 'resume.volunteer')}</h2>
+    </div>
+    <article class="timeline-item">
+      <h3 class="timeline-role">{t(locale, 'resume.volunteerRole')}</h3>
+      <p class="timeline-place">{t(locale, 'resume.volunteerBody')}</p>
+    </article>
   </div>
 
   <aside class="cta-card">
@@ -68,7 +117,7 @@ const { locale } = Astro.props;
       <h2 class="timeline-role">{t(locale, 'resume.downloadTitle')}</h2>
       <p class="timeline-place">{t(locale, 'resume.downloadText')}</p>
     </div>
-    <a class="btn btn-primary" href={site.resumePdf} download="Resume.pdf">
+    <a class="btn btn-primary" href={resumePdf.href} download={resumePdf.download}>
       {t(locale, 'resume.downloadBtn')}
     </a>
   </aside>
